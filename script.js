@@ -1,52 +1,73 @@
-var playerChoice = "";
-var computerChoice = "";
-/*
- * Note that the scissors emoji has to have an extra space!
- */
-var emojis = ["✂️ ", "📄", "🪨"];
-var currentEmojiNumber = 0;
+let userName = prompt('enter your name')
+let names = `Get Ready To Play... ${userName}.`
+document.getElementById('userWins').textContent = `${userName} wins = 0`
+let userNameOutputDiv = document.getElementById('userNameOutput')
+let computerChoice
+let compScore = 0
+let userScore = 0
+let ties = 0
 
-var shuffleIntervalID = setInterval(shuffleEmojis, 150);
 
-var playerChoiceContainer = document.querySelector("#player-choice-container");
-var emojiShuffleElement = document.querySelector("#emoji-shuffle");
+console.log(names)
+userNameOutputDiv.innerHTML = `<p>${names}</p>`
+//user name// 
 
-playerChoiceContainer.addEventListener("click", handlePlayerChoice);
-
-function determineGameWinner() {
-    var gameResultMessageElement = document.querySelector("#game-result-message");
-    var gameResultMessage = "";
-
-    if (playerChoice === computerChoice) {
-        gameResultMessage = "It's a tie!";
-    } else if (playerChoice === "🪨" && computerChoice === "✂️ ") {
-        gameResultMessage = "Player wins!";
-    } else if (playerChoice === "📄" && computerChoice === "🪨") {
-        gameResultMessage = "Player wins!";
-    } else if (playerChoice === "✂️ " && computerChoice === "📄") {
-        gameResultMessage = "Player wins!";
-    } else {
-        gameResultMessage = "Computer wins!";
+function playRound(userSelection){
+     userChoice = userSelection
+    //Get Computer Choice
+    const randomNumber = Math.floor(Math.random()*3);
+    if (randomNumber === 0) {
+        computerChoice = 'Rock'
+        console.log(randomNumber)
     }
-
-    gameResultMessageElement.textContent = gameResultMessage + " Refresh to play again!";
-}
-
-function handlePlayerChoice(event) {
-    if (!event.target.classList.contains("emoji")) return;
-    playerChoice = event.target.textContent;
-    playerChoiceContainer.innerHTML = `<p class="emoji">${playerChoice}</p>`;
-    clearInterval(shuffleIntervalID);
-    determineGameWinner();
-}
-
-function shuffleEmojis() {
-    computerChoice = emojis[currentEmojiNumber];
-    emojiShuffleElement.textContent = computerChoice;
-
-    if (currentEmojiNumber < emojis.length - 1) {
-        currentEmojiNumber++;
-    } else {
-        currentEmojiNumber = 0;
+    else if (randomNumber === 1) {
+        computerChoice = 'Paper'
+        console.log(randomNumber)
     }
-}
+    else  {
+        computerChoice = 'Scissor'
+        console.log(randomNumber)
+    }
+ //Display Selections
+ document.getElementById("comp_selection").textContent = computerChoice
+ document.getElementById("user_selection").textContent = userChoice
+
+ //Evaluate the winner
+//USer Chooses Rock
+ if (userChoice === 'Rock' && computerChoice === 'Rock'){
+    console.log('Tie')
+    ties++   
+    console.log(userScore)
+} else if (userChoice === 'Rock' && computerChoice === 'Paper'){
+    console.log('Computer Wins')
+    compScore++
+    console.log(userScore)
+} else {
+    console.log('You win')
+    userScore++
+    console.log(userScore)
+} 
+//user chooses Paper
+if (userChoice === 'Paper' && computerChoice === 'Rock'){
+    console.log('Tie')
+    ties++   
+} else if (userChoice === 'Paper' && computerChoice === 'Paper'){
+    console.log('Computer Wins')
+    compScore++
+} else {
+    console.log('You win')
+    userScore++
+   
+} 
+
+
+//update visuals on site
+document.getElementById('userWins').textContent = `${userName} wins = ${userScore}`
+document.getElementById('compWins').textContent = `Computer wins = ${compScore}`
+document.getElementById('ties').textContent = `Ties = ${ties}`
+
+
+} 
+
+
+   
