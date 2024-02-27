@@ -1,29 +1,14 @@
+.title{
 
-    .body{
-        background-color:rgb(110, 121, 172);
-    }
-    .custom-button {
-
-        text-align: center;
-        cursor: pointer;
-        background-image: url('rock.png'); 
-        width: 200px;
-        height: 200px;
-    }
-    .paper {
-
-        text-align: center;
-        cursor: pointer;
-        background-image: url('sc.png'); 
-        width: 200px;
-        height: 200px;
-    }
-    .scissors {
-
-        text-align: center;
-        cursor: pointer;
-        background-image: url('paper.png'); 
-        width: 200px;
-        height: 200px;
+    color:rgb(255, 255, 255);
+    font-family: "Protest Strike", sans-serif;
     }
     
+    .body{
+        background-image: url(poop.avif);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .pink{
+        background-color: rgb(182, 187, 255);
+    }

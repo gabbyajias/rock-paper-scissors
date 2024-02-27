@@ -22,43 +22,48 @@
 
     <body class="body">
         <header>
-       
+          <div class="title">  <h1 class="text-center">Rock, Paper, Scissors</h1> </div>
         </header>
         <main>
             <main>
+                <h1 class="text-center">Pick Rock,Paper, or Scissors.</h1>
                 <div class="container my-4">
-                 
+                    <div id="userNameOutput" class="text-center bg-secondary text-white">
                         <!--name-->
                     </div>
                 </div>
             </main>
             <body>
                 <div id="r-p-s" class="container text-center my-auto">
-                    <h1>READY TO PLAY... <br> Choose rock, paper, or scissors.</h1>
-                    <div class="display-4" id="comp_selection">The computer chose...</div>
+                    <div class="display-4" id="user_selection">The user chose...</div>
+                </div>
+              
             
                 </div>
-
-                <div class="">
+               
+                <div class="text-center d-flex">
                 <div id="r-p-s" class="container text-center my-auto">
-                    <div><button class="custom-button" onclick="playRound('Rock')"></button></div>
+                    <div><button onclick="playRound('Rock')" class="pink">Rock</button></div>
+                    <img src="rock.png" alt="">
                 </div>
 
                 <div id="r-p-s" class="container text-center my-auto">
-                    <div><button class="paper" onclick="playRound('Rock')"></button></div>
+                    <div><button onclick="playRound('Paper')" class="pink">Paper</button></div>
+                    <img src="paper.png" alt="">
                 </div>
 
                 <div id="r-p-s" class="container text-center my-auto">
-                    <div><button class="scissors" onclick="playRound('Rock')"></button></div>
+                    <div><button onclick="playRound('Scissor')" class="pink">Scissors</button></div>
+                    <img src="sc.png" alt="">
                 </div>
             </div>
-           
             <div id="r-p-s" class="container text-center my-auto">
-                <div class="display-4" id="user_selection">The user chose...</div>
-            </div>
+               
+                <div class="display-4" id="comp_selection">The computer chose...</div>
+          
 
             <div class="text-center d-flex" id="Ties">
-                <div>
+                <divv>
             <h1 id="userWins">User wins = 0</h1>
             <h1 id="compWins">Computer Wins = 0</h1>
             <h1 id="ties">Ties = </h1>

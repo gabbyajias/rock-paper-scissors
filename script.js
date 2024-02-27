@@ -1,5 +1,5 @@
 let userName = prompt('enter your name')
-let names = `Get Ready To Play... ${userName}.`
+let names = `Ready to play ${userName}?`
 document.getElementById('userWins').textContent = `${userName} wins = 0`
 let userNameOutputDiv = document.getElementById('userNameOutput')
 let computerChoice
@@ -42,23 +42,41 @@ function playRound(userSelection){
     console.log('Computer Wins')
     compScore++
     console.log(userScore)
-} else {
+} else if(userChoice === 'Rock' && computerChoice === 'Scissor'){
     console.log('You win')
     userScore++
     console.log(userScore)
-} 
+}
 //user chooses Paper
-if (userChoice === 'Paper' && computerChoice === 'Rock'){
+else if (userChoice === 'Paper' && computerChoice === 'Paper'){
     console.log('Tie')
     ties++   
-} else if (userChoice === 'Paper' && computerChoice === 'Paper'){
+    console.log(userScore)
+} else if (userChoice === 'Paper' && computerChoice === 'Scissor'){
     console.log('Computer Wins')
     compScore++
-} else {
+    console.log(userScore)
+} else if(userChoice === 'Paper' && computerChoice === 'Rock'){
     console.log('You win')
     userScore++
-   
-} 
+    console.log(userScore)
+}
+
+    //user chooses Scissor
+else if (userChoice === 'Scissor' && computerChoice === 'Scissor'){
+    console.log('Tie')
+    ties++   
+    console.log(userScore)
+} else if (userChoice === 'Scissor' && computerChoice === 'Rock'){
+    console.log('Computer Wins')
+    compScore++
+    console.log(userScore)
+} else if(userChoice === 'Scissor' && computerChoice === 'Paper'){
+    console.log('You win')
+    userScore++
+    console.log(userScore)
+}
+
 
 
 //update visuals on site
@@ -71,3 +89,15 @@ document.getElementById('ties').textContent = `Ties = ${ties}`
 
 
    
+
+
+
+
+
+
+
+
+
+
+
+
