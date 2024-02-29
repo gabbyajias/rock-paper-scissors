@@ -1,6 +1,6 @@
 let userName = prompt('enter your name')
 let names = `Ready to play ${userName}?`
-document.getElementById('userWins').textContent = `${userName} wins = 0`
+document.getElementById('userWins').textContent = `${userName} you won = 0`
 let userNameOutputDiv = document.getElementById('userNameOutput')
 let computerChoice
 let compScore = 0
@@ -81,8 +81,8 @@ else if (userChoice === 'Scissor' && computerChoice === 'Scissor'){
 
 //update visuals on site
 document.getElementById('userWins').textContent = `${userName} wins = ${userScore}`
-document.getElementById('compWins').textContent = `Computer wins = ${compScore}`
-document.getElementById('ties').textContent = `Ties = ${ties}`
+document.getElementById('compWins').textContent = `Computer won = ${compScore}`
+document.getElementById('ties').textContent = `ties = ${ties}`
 
 
 } 

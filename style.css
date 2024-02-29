@@ -8,6 +8,8 @@
         background-image: url(poop.avif);
         background-repeat: no-repeat;
         background-size: cover;
+        font-family: "Caveat";
+        font-optical-sizing: auto;
     }
     .pink{
         background-color: rgb(182, 187, 255);
