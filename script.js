@@ -79,18 +79,21 @@ else if (userChoice === 'Scissor' && computerChoice === 'Scissor'){
 
 
 
-//update visuals on site
+
+
 document.getElementById('userWins').textContent = `${userName} wins = ${userScore}`
 document.getElementById('compWins').textContent = `Computer won = ${compScore}`
 document.getElementById('ties').textContent = `ties = ${ties}`
-function reloadPage() {
-    location.reload();
+function reloadPage(reload) {
+location.reload();
 }
 
 } 
 
 
-   
+function restart(){
+    window.location.reload();
+}
 
 
 
